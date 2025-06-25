@@ -1,4 +1,4 @@
-// TYPING ANIMATION
+// Typing Effect
 const nameText = "Ajay Singh";
 const roleText = "SEO Executive & Web Developer";
 let nameIndex = 0;
@@ -18,42 +18,29 @@ function typeRole() {
   if (roleIndex < roleText.length) {
     document.getElementById("typing-role").innerHTML += roleText.charAt(roleIndex);
     roleIndex++;
-    setTimeout(typeRole, 60);
+    setTimeout(typeRole, 50);
   }
 }
 
 window.onload = typeName;
 
-
-// TAB SWITCHING IN ABOUT SECTION
+// Tab Switching: Skills, Experience, Education
 function showSection(id) {
-  const sections = document.querySelectorAll(".about-tab");
-  sections.forEach(sec => sec.style.display = "none");
-  document.getElementById(id).style.display = "block";
-
-  // Highlight active button
-  const buttons = document.querySelectorAll(".about-tab-btn");
-  buttons.forEach(btn => btn.classList.remove("active"));
-  document.querySelector(`[data-tab="${id}"]`).classList.add("active");
+  const allSections = document.querySelectorAll('.section');
+  allSections.forEach(sec => sec.style.display = 'none');
+  const active = document.getElementById(id);
+  if (active) active.style.display = 'block';
 }
 
-
-// SCROLL REVEAL ANIMATION FOR PROJECTS
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+// Scroll Animation (optional)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   });
 });
-
-document.querySelectorAll('.project-card').forEach(card => {
-  observer.observe(card);
-});
-
-
-// OPTIONAL: MOBILE MENU TOGGLE (if used)
-function toggleMenu() {
-  const nav = document.querySelector(".nav-links");
-  nav.classList.toggle("open");
-}
