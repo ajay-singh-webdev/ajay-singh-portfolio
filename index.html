@@ -1,95 +1,100 @@
+<!-- ✅ index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ajay Singh | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <nav>
-    <div class="logo">Ajay Singh</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-  </nav>
-
-  <section id="home" class="flex-section">
-    <div class="home-text">
-      <h1>Hi, I'm <span class="highlight">Ajay Singh</span></h1>
-      <p>SEO Executive & Web Developer</p>
-      <a href="mailto:singhajay05324@gmail.com" class="button">Contact Me</a>
-      <a href="https://drive.google.com/your-resume-link" target="_blank" class="button">Download Resume</a>
-      <div class="social-buttons">
-        <a href="https://github.com/ajay-singh-webdev" class="button-outline">GitHub</a>
-        <a href="https://linkedin.com/in/ajay-singh-seo-dev" class="button-outline">LinkedIn</a>
+  <!-- 🔵 Home/Banner Section -->
+  <section class="banner">
+    <div class="banner-text">
+      <h1>Hi, I'm <span id="typing-name"></span></h1>
+      <p id="typing-role"></p>
+      <div class="buttons">
+        <a href="https://drive.google.com/your-resume-link" target="_blank">Download Resume</a>
+        <a href="#contact">Contact Me</a>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/ajay-singh-webdev" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/ajay-singh-seo-dev" target="_blank">LinkedIn</a>
       </div>
     </div>
-    <img src="https://i.ibb.co/FkzGnFYB/ajay.jpg" alt="Ajay Singh" class="profile-img">
+    <div class="banner-image">
+      <img src="https://i.ibb.co/FkzGnFY/ajay.jpg" alt="Ajay Singh" />
+    </div>
+    <a href="#about" class="scroll-arrow">&#8595;</a>
   </section>
 
-  <section id="about">
+  <!-- 🔵 About Section -->
+  <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Hello! I’m <strong>Ajay Singh</strong>, an SEO Executive & Web Developer. I specialize in On-page, Off-page, and Technical SEO. With experience in tools like Google Search Console, Analytics, and Ahrefs, I help improve website performance and visibility.</p>
-    <div class="tab-buttons">
-      <button onclick="showTab('skills')" class="button">Skills</button>
-      <button onclick="showTab('experience')" class="button">Experience</button>
-      <button onclick="showTab('education')" class="button">Education</button>
+    <p>Hello! I’m Ajay Singh, an SEO Executive & Web Developer. I specialize in On-page, Off-page, and Technical SEO. With experience in tools like Google Search Console, Analytics, and Ahrefs, I help improve website performance and visibility.</p>
+    <div class="tabs">
+      <button onclick="showTab('skills')">Skills</button>
+      <button onclick="showTab('experience')">Experience</button>
+      <button onclick="showTab('education')">Education</button>
     </div>
-    <div id="skills" class="tab">
-      <h3 class="highlight">🛠 Skills</h3>
-      <ul>
-        <li>SEO (On‑page, Off‑page, Technical)</li>
-        <li>Google Search Console, Analytics, Ahrefs</li>
-        <li>HTML, CSS, JavaScript, PHP, React</li>
-      </ul>
-    </div>
-    <div id="experience" class="tab" style="display:none;">
-      <h3 class="highlight">💼 Experience</h3>
-      <p>6‑month SEO experience: audits, keyword research, technical fixes, and link building.</p>
-    </div>
-    <div id="education" class="tab" style="display:none;">
-      <h3 class="highlight">🎓 Education</h3>
-      <ul>
-        <li>MCA – Punjabi University (2025)</li>
-        <li>BCA – Govt. Shivalik College (2020–23)</li>
-        <li>12th – Humanities (2020)</li>
-        <li>10th – GSSS Kathera (2018)</li>
-      </ul>
+    <div class="tab-content">
+      <div id="skills" class="tab active">
+        <ul>
+          <li>SEO (On-page, Off-page, Technical)</li>
+          <li>Google Analytics, GSC, Ahrefs</li>
+          <li>HTML, CSS, JS, PHP, React</li>
+        </ul>
+      </div>
+      <div id="experience" class="tab">
+        <p>6+ months SEO experience in audits, keyword research, technical SEO, and link building.</p>
+      </div>
+      <div id="education" class="tab">
+        <ul>
+          <li>MCA – Punjabi University (2025)</li>
+          <li>BCA – Govt. Shivalik College (2020–2023)</li>
+          <li>12th – Humanities (2020)</li>
+          <li>10th – GSSS Kathera (2018)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section id="services">
+  <!-- 🔵 Services Section -->
+  <section class="services">
     <h2>Services</h2>
-    <ul>
-      <li>SEO Strategy and Implementation</li>
-      <li>Website Optimization</li>
-      <li>Web Development (HTML, CSS, JS, PHP)</li>
-    </ul>
+    <div class="service-boxes">
+      <div class="service">SEO - On-page</div>
+      <div class="service">SEO - Off-page</div>
+      <div class="service">Technical SEO</div>
+      <div class="service">CMS (WordPress)</div>
+      <div class="service">Web Applications</div>
+    </div>
   </section>
 
-  <section id="projects">
+  <!-- 🔵 Projects Section -->
+  <section class="projects">
     <h2>Projects</h2>
-    <ul>
-      <li><strong>Educa</strong> – E-learning platform (HTML/CSS/JS)</li>
-      <li><strong>SEO Tools</strong> – DA/PA Checker, Backlink Analyzer</li>
-      <li><strong>Portfolio Website</strong> – Personal SEO + Dev profile</li>
-    </ul>
+    <div class="project-grid">
+      <div class="project-box">
+        <img src="https://via.placeholder.com/200" alt="Project 1" />
+        <p>Project Name 1</p>
+      </div>
+      <div class="project-box">
+        <img src="https://via.placeholder.com/200" alt="Project 2" />
+        <p>Project Name 2</p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:singhajay05324@gmail.com" class="highlight">singhajay05324@gmail.com</a></p>
-    <p>Location: Punjab, India</p>
+  <!-- 🔵 Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:singhajay05324@gmail.com" method="post" enctype="text/plain">
+      <input type="text" placeholder="Your Name" name="name" required />
+      <input type="email" placeholder="Your Email" name="email" required />
+      <textarea placeholder="Your Message" name="message" required></textarea>
+      <button type="submit">Send Email</button>
+    </form>
   </section>
 
   <script src="script.js"></script>
