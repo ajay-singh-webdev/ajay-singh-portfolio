@@ -1,18 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajay Singh | Portfolio</title>
+  <title>Ajay Singh | SEO Executive & Web Developer</title>
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- 🔵 Home/Banner Section -->
-  <section class="banner">
+
+  <header class="banner" id="home">
     <div class="banner-text">
       <h1>Hi, I'm <span id="typing-name"></span></h1>
       <p id="typing-role"></p>
-      <div class="buttons">
+      <div class="banner-buttons">
         <a href="https://drive.google.com/your-resume-link" target="_blank">Download Resume</a>
         <a href="#contact">Contact Me</a>
       </div>
@@ -24,83 +26,68 @@
     <div class="banner-image">
       <img src="https://i.ibb.co/FkzGnFY/ajay.jpg" alt="Ajay Singh" />
     </div>
-    <a href="#about" class="scroll-arrow">&#8595;</a>
-  </section>
+  </header>
 
-  <!-- 🔵 About Section -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>Hello! I’m Ajay Singh, an SEO Executive & Web Developer. I specialize in On-page, Off-page, and Technical SEO. With experience in tools like Google Search Console, Analytics, and Ahrefs, I help improve website performance and visibility.</p>
-    <div class="tab-buttons">
-      <button onclick="showTab('skills')">Skills</button>
-      <button onclick="showTab('experience')">Experience</button>
-      <button onclick="showTab('education')">Education</button>
-    </div>
-    <div class="tab-content">
-      <div id="skills" class="tab active">
-        <ul>
-          <li>SEO (On-page, Off-page, Technical)</li>
-          <li>Google Analytics, GSC, Ahrefs</li>
-          <li>HTML, CSS, JS, PHP, React</li>
-        </ul>
-      </div>
-      <div id="experience" class="tab">
-        <p>6+ months SEO experience in audits, keyword research, technical SEO, and link building.</p>
-      </div>
-      <div id="education" class="tab">
-        <ul>
-          <li>MCA – Punjabi University (2025)</li>
-          <li>BCA – Govt. Shivalik College (2020–2023)</li>
-          <li>12th – Humanities (2020)</li>
-          <li>10th – GSSS Kathera (2018)</li>
-        </ul>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="section-box">
+    <div class="about-container">
+      <img src="https://i.ibb.co/FkzGnFY/ajay.jpg" alt="Ajay Singh" class="about-img" />
+      <div class="about-tabs">
+        <h2>About Me</h2>
+        <p>Hello! I’m Ajay Singh, an SEO Executive & Web Developer. I specialize in On-page, Off-page, and Technical SEO.</p>
+        <div class="tab-buttons">
+          <button onclick="showTab('skills')">Skills</button>
+          <button onclick="showTab('experience')">Experience</button>
+          <button onclick="showTab('education')">Education</button>
+        </div>
+        <div id="skills" class="tab active">
+          <ul><li>HTML, CSS, JavaScript, PHP, React</li><li>SEO (On-page, Off-page, Technical)</li></ul>
+        </div>
+        <div id="experience" class="tab"><p>6+ months of SEO experience including audits, keyword research, technical fixes, and link building.</p></div>
+        <div id="education" class="tab">
+          <ul><li>MCA – Punjabi University (2025)</li><li>BCA – Govt. Shivalik College (2020–23)</li></ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔵 Services Section -->
-  <section class="section">
+  <section id="services" class="section-box">
     <h2>Services</h2>
-    <div class="service-boxes">
-      <div class="service">SEO - On-page</div>
-      <div class="service">SEO - Off-page</div>
-      <div class="service">Technical SEO</div>
-      <div class="service">CMS (WordPress)</div>
-      <div class="service">Web Applications</div>
+    <div class="cards">
+      <div class="card"><h3>SEO</h3><p>On-page, Off-page, and Technical SEO optimization for better ranking.</p></div>
+      <div class="card"><h3>CMS</h3><p>Building and customizing WordPress & Shopify sites.</p></div>
+      <div class="card"><h3>Web App</h3><p>Full-stack development using React, Node.js, and PHP.</p></div>
     </div>
   </section>
 
-  <!-- 🔵 Projects Section -->
-  <section class="section">
+  <section id="projects" class="section-box">
     <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-box">
-        <img src="https://via.placeholder.com/200" alt="Project 1" />
-        <p>Project Name 1</p>
-      </div>
-      <div class="project-box">
-        <img src="https://via.placeholder.com/200" alt="Project 2" />
-        <p>Project Name 2</p>
+    <div class="cards">
+      <div class="card">
+        <h3>E-Learning</h3>
+        <p>Online education platform with responsive design and SEO optimization.</p>
+        <a href="https://ajay-singh-webdev.github.io/e-learning/" target="_blank">View Project</a>
       </div>
     </div>
   </section>
 
-  <!-- 🔵 Contact Section -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <form action="mailto:singhajay05324@gmail.com" method="post" enctype="text/plain">
-      <input type="text" placeholder="Your Name" name="name" required />
-      <input type="email" placeholder="Your Email" name="email" required />
-      <textarea placeholder="Your Message" name="message" required></textarea>
-      <button type="submit">Send Email</button>
+  <section id="contact" class="section-box">
+    <h2>Contact</h2>
+    <form action="mailto:singhajay05324@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
     </form>
   </section>
 
-  <!-- 🔵 Footer -->
-  <footer>
-    © 2025 Ajay Singh. All rights reserved.
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="footer">© 2025 Ajay Singh. All rights reserved.</footer>
 </body>
 </html>
