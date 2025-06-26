@@ -67,3 +67,9 @@ function revealOnScroll() {
     observer.observe(el);
   });
 }
+
+// Tab switching logic for About section
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
