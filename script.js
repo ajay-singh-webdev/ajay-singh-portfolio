@@ -1,4 +1,4 @@
-
+// Typing animation
 const nameText = "Ajay Singh";
 const roleText = "SEO Executive & Web Developer";
 let nameIndex = 0;
@@ -24,7 +24,20 @@ function typeRole() {
 
 window.onload = typeName;
 
-function showTab(id) {
-  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+// Theme toggle logic
+const themeToggle = document.getElementById("theme-toggle");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme === "light") {
+  document.body.classList.add("light-mode");
+  themeToggle.textContent = "☀️";
+} else {
+  themeToggle.textContent = "🌙";
 }
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+  const isLight = document.body.classList.contains("light-mode");
+  themeToggle.textContent = isLight ? "☀️" : "🌙";
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+});
