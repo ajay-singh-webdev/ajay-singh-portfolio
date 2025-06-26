@@ -53,14 +53,16 @@ body {
 
 /* Banner */
 .banner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 80px 40px;
+  gap: 40px;
 }
 .banner-text {
-  padding: 40px;
+  flex: 1 1 480px;
+  max-width: 600px;
   animation: fadeInLeft 1s ease;
 }
 @keyframes fadeInLeft {
@@ -107,6 +109,7 @@ body {
   color: white;
 }
 .banner-image {
+  flex: 1 1 280px;
   display: flex;
   justify-content: center;
   animation: fadeInRight 1s ease;
@@ -127,7 +130,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Sections */
+/* Section Boxes */
 .section-box {
   padding: 50px 20px;
   margin: 40px auto;
@@ -142,7 +145,7 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Cards */
+/* Cards (services/projects) */
 .cards {
   display: flex;
   gap: 20px;
@@ -174,7 +177,7 @@ body {
   background: #e60046;
 }
 
-/* Form */
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
@@ -307,7 +310,6 @@ body.light-mode .footer {
 /* Responsive */
 @media (max-width: 768px) {
   .banner {
-    display: flex;
     flex-direction: column;
     text-align: center;
   }
