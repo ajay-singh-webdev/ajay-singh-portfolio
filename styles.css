@@ -1,57 +1,63 @@
-
-/* Styles for Ajay's Portfolio */
+/* Base Styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   background: #121212;
   color: #fff;
+  transition: background 0.3s, color 0.3s;
 }
+
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
   background: #1f1f1f;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-.navbar a {
-  color: #fff;
-  text-decoration: none;
+.logo {
+  color: #ff004f;
+  font-size: 20px;
   font-weight: bold;
 }
-.navbar a:hover {
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.nav-links a:hover {
   color: #ff004f;
 }
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
 .banner {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #000, #1a1a1a);
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 80px 40px;
 }
 .banner-text {
-  flex: 1 1 400px;
-  padding: 20px;
+  flex: 1;
+  padding: 40px;
 }
-.banner-image {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
+.banner-text h1 {
+  font-size: 42px;
 }
-.banner-image img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+.banner-text p {
+  font-size: 20px;
 }
-.banner-buttons a,
-.social-links a {
-  margin: 10px 10px 0 0;
-  display: inline-block;
+.banner-buttons {
+  margin-top: 20px;
 }
 .banner-buttons a {
   background: #ff004f;
@@ -59,6 +65,11 @@ body {
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
+  margin: 6px 10px 6px 0;
+  display: inline-block;
+}
+.social-links {
+  margin-top: 14px;
 }
 .social-links a {
   border: 2px solid #ff004f;
@@ -66,14 +77,24 @@ body {
   padding: 8px 16px;
   border-radius: 6px;
   text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
 }
+.banner-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+}
+
 .section-box {
   padding: 50px 20px;
   margin: 40px auto;
   max-width: 1000px;
   background: #1e1e1e;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 .cards {
   display: flex;
@@ -91,12 +112,23 @@ body {
   transform: translateY(-5px);
   background: #333;
 }
+.btn-project {
+  margin-top: 10px;
+  display: inline-block;
+  background: #ff004f;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-form input, form textarea {
+form input,
+form textarea {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -109,50 +141,72 @@ form button {
   border-radius: 5px;
   font-weight: bold;
 }
+.contact-links {
+  margin-top: 16px;
+  justify-content: center;
+}
 .footer {
   background: #111;
   text-align: center;
   padding: 20px;
   margin-top: 60px;
 }
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
+
+/* Light Mode */
+body.light-mode {
+  background: #f5f5f5;
+  color: #111;
 }
-.about-img {
-  width: 280px;
-  border-radius: 10px;
+body.light-mode .navbar {
+  background: #e0e0e0;
 }
-.about-tabs {
-  flex: 1 1 300px;
+body.light-mode .nav-links a,
+body.light-mode .logo {
+  color: #111;
 }
-.tab-buttons button {
+body.light-mode .nav-links a:hover {
+  color: #ff004f;
+}
+body.light-mode #theme-toggle {
+  color: #111;
+}
+body.light-mode .banner-buttons a {
   background: #ff004f;
-  color: white;
-  padding: 8px 14px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  color: #fff;
 }
-.tab {
-  display: none;
+body.light-mode .social-links a {
+  border-color: #ff004f;
+  color: #ff004f;
 }
-.tab.active {
-  display: block;
+body.light-mode .section-box {
+  background: #fff;
+  color: #111;
 }
+body.light-mode .card {
+  background: #f1f1f1;
+  color: #111;
+}
+body.light-mode .card:hover {
+  background: #ddd;
+}
+body.light-mode .footer {
+  background: #ddd;
+  color: #111;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .banner {
     flex-direction: column;
     text-align: center;
   }
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
   .navbar {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
