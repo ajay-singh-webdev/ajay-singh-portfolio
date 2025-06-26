@@ -45,12 +45,27 @@
     </div>
     <div class="about-content">
       <h2>About Me</h2>
-      <p>Hello! I'm Ajay Singh, an SEO Executive & Web Developer passionate about building optimized, user-friendly websites. With experience in both technical SEO and modern web stacks, I help businesses improve their visibility and digital presence.</p>
-      <ul>
-        <li><strong>Skills:</strong> HTML, CSS, JavaScript, PHP, React</li>
-        <li><strong>SEO Expertise:</strong> On-page, Off-page, Technical SEO</li>
-        <li><strong>Education:</strong> MCA – Punjabi University (2025), BCA – Govt. Shivalik College (2020–23)</li>
-      </ul>
+      <p>Hello! I’m Ajay Singh, an SEO Executive & Web Developer. I specialize in On-page, Off-page, and Technical SEO.</p>
+      <div class="tab-buttons">
+        <button onclick="showTab('skills')">Skills</button>
+        <button onclick="showTab('experience')">Experience</button>
+        <button onclick="showTab('education')">Education</button>
+      </div>
+      <div id="skills" class="tab active">
+        <ul>
+          <li>HTML, CSS, JavaScript, PHP, React</li>
+          <li>SEO (On-page, Off-page, Technical)</li>
+        </ul>
+      </div>
+      <div id="experience" class="tab">
+        <p>6+ months of SEO experience including audits, keyword research, technical fixes, and link building.</p>
+      </div>
+      <div id="education" class="tab">
+        <ul>
+          <li>MCA – Punjabi University (2025)</li>
+          <li>BCA – Govt. Shivalik College (2020–23)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
