@@ -40,9 +40,9 @@ body {
 .nav-links {
   display: flex;
   gap: 20px;
-  margin-top: 10px;
+  margin: 10px auto 0; /* auto left & right to center */
+  justify-content: center;
 }
-
 .nav-links a {
   color: #fff;
   text-decoration: none;
@@ -411,4 +411,12 @@ body.light-mode .footer {
   #theme-toggle {
     margin-left: auto;
   }
+
+  @media (min-width: 769px) {
+  .nav-links {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 }
