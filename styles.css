@@ -61,7 +61,7 @@ h1, h2, h3 {
   margin-top: 16px;
 }
 
-.btn {
+.buttons a, .social-links a {
   background: #ff004f;
   color: #fff;
   padding: 8px 18px;
@@ -72,17 +72,22 @@ h1, h2, h3 {
   transition: background 0.3s ease;
 }
 
-.btn:hover {
+.buttons a:hover {
   background: #e60045;
 }
 
-.social-btn {
-  border: 2px solid #ff004f;
+.social-links a {
   background: transparent;
+  border: 2px solid #ff004f;
   color: #ff004f;
 }
 
-.banner-img {
+.social-links a:hover {
+  background: #ff004f;
+  color: #fff;
+}
+
+.banner-image {
   flex: 1 1 300px;
   display: flex;
   justify-content: center;
@@ -90,7 +95,7 @@ h1, h2, h3 {
   animation: fadeIn 1.5s ease-in-out;
 }
 
-.banner-img img {
+.banner-image img {
   width: 240px;
   height: 240px;
   border-radius: 50%;
@@ -109,12 +114,13 @@ h1, h2, h3 {
   text-decoration: none;
 }
 
-/* About section buttons */
+/* Tabs */
 .tab-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .tab-buttons button {
@@ -127,8 +133,19 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
+.tab {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab.active {
+  display: block;
+  opacity: 1;
+}
+
 /* Project Boxes */
-.projects {
+.project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
@@ -152,6 +169,22 @@ h1, h2, h3 {
 
 .project-box:hover {
   transform: translateY(-6px);
+}
+
+/* Services */
+.service-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service {
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 240px;
+  text-align: center;
 }
 
 /* Contact Form */
@@ -181,6 +214,16 @@ form button {
   cursor: pointer;
 }
 
+/* Footer */
+footer {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 60px;
+}
+
 /* Animations */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(30px); }
@@ -192,8 +235,9 @@ form button {
   50% { transform: translate(-50%, -10px); }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .banner-img {
+  .banner-image {
     display: none;
   }
 
@@ -203,5 +247,9 @@ form button {
 
   .banner-text p {
     font-size: 16px;
+  }
+
+  .section {
+    padding: 40px 15px;
   }
 }
