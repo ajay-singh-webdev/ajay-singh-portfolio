@@ -1,3 +1,5 @@
+// script.js
+
 // Typing Effect
 const nameText = "Ajay Singh";
 const roleText = "SEO Executive & Web Developer";
@@ -24,23 +26,24 @@ function typeRole() {
 
 window.onload = typeName;
 
-// Tab Switching: Skills, Experience, Education
-function showSection(id) {
-  const allSections = document.querySelectorAll('.section');
-  allSections.forEach(sec => sec.style.display = 'none');
-  const active = document.getElementById(id);
-  if (active) active.style.display = 'block';
+// Tab Switching
+function showTab(id) {
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(tab => tab.classList.remove("active"));
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add("active");
+  }
 }
 
-// Scroll Animation (optional)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+// Optional: Smooth scroll for anchor links
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+anchorLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
