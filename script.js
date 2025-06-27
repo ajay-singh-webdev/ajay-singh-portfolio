@@ -1,4 +1,4 @@
-// Typing Animation
+// Typing animation
 const nameText = "Ajay Singh";
 const roleText = "SEO Executive & Web Developer";
 let nameIndex = 0;
@@ -22,22 +22,31 @@ function typeRole() {
   }
 }
 
-// Tab Switching (About Section)
+window.onload = () => {
+  typeName();
+
+  // Load theme on page load
+  const currentTheme = localStorage.getItem("theme");
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (currentTheme === "light") {
+    document.body.classList.add("light-mode");
+    themeToggle.textContent = "☀️";
+  } else {
+    themeToggle.textContent = "🌙";
+  }
+
+  // Toggle dark/light mode
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    const isLight = document.body.classList.contains("light-mode");
+    themeToggle.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  });
+};
+
+// Tab switcher (About section)
 function showTab(id) {
   document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
-
-// Mobile Menu Toggle
-function toggleMenu() {
-  const navLinks = document.getElementById("nav-links");
-  navLinks.classList.toggle("show");
-}
-
-// Theme Toggle
-function toggleTheme() {
-  document.body.classList.toggle("light-mode");
-}
-
-// Start Typing on Page Load
-window.onload = typeName;
