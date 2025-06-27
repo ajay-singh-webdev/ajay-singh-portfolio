@@ -331,6 +331,9 @@ form button:hover {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* ... your CSS from earlier ... */
+
+
 /* Responsive Layouts */
 @media (max-width: 768px) {
   .banner {
